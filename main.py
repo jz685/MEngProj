@@ -8,3 +8,7 @@ filename = 'mytest'
 B = load_graph(filename)
 
 print B
+
+B, C = load_graph(filename)
+print B
+print C

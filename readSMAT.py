@@ -18,12 +18,13 @@ def readSMAT(filename):
 	if (os.path.splitext(filename)[1] == '.gz'):
 		# the outcome i, j, v are verctors and m, n are the size
 		m, n, i, j, v = readSMATGZ(filename)
-		print i
-		print j
-		print m
-		print n
+		# print i
+		# print j
+		# print m
+		# print n
 		# A = sp.sparse.coo_matrix((v, (i, j)), shape=(m,n))
-		A = sp.sparse.coo_matrix((v, (i, j)), shape = (m, n)).toarray()
+		# A = sp.sparse.coo_matrix((v, (i, j)), shape = (m, n)).toarray()
+		A = sp.sparse.coo_matrix((v, (i, j)), shape = (m, n))
 		return A
 
 

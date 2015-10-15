@@ -25,5 +25,4 @@ def load_graph(graphname):
 	else: 
 		raise Exception('eigs file does not exist.')
 
-	print 'two'
 	return (A, varargout)
