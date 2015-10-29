@@ -1,11 +1,12 @@
 import os
 import numpy as np
 import scipy as sp
+# Do I need this import?
 from scipy.sparse import coo_matrix
 import gzip
 
 def readSMAT(filename):
-	print '-now reading: ' + filename
+	print '-reading: ' + filename
 	if (not os.path.isfile(filename)):
 		raise Exception('ERROR: No such file:' + filename)
 	if (os.path.isfile(filename + '.info')):

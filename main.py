@@ -1,14 +1,35 @@
-## main
-from load_graph import *
-from readSMAT import *
+# ## main
+# # ------Check load_graph function
+# from load_graph import *
+# from readSMAT import *
+# from MyTimer import MyTimer
+# # import time
 
-filename = 'mytest'
 
-# A = load_graph(filename)
-B = load_graph(filename)
+# filename = 'Erdos02-cc'
+# # A = load_graph(filename)
 
-print B
+# B = load_graph(filename)
 
-B, C = load_graph(filename)
-print B
-print C
+# print B
+
+# # B, C = load_graph(filename)
+# # print B
+# # print C
+
+# ------Check nadjacency function
+
+import os
+import numpy as np
+import scipy as sp
+from scipy.sparse import coo_matrix
+import gzip
+import time
+from MyTimer import MyTimer
+from load_graph import load_graph
+from nadjacency import nadjacency
+import math
+
+dname = 'Erdos02-cc'
+A, mylambda = load_graph(dname)
+N = nadjacency(A)

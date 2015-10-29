@@ -2,6 +2,9 @@ import os
 from readSMAT import readSMAT
 import numpy as np
 
+# This function will load a given graph in .gz format
+# This function calls function readSMAT and uses numpy
+# input value is the name of given graph, return both the matrix and eigs
 def load_graph(graphname):
 	# ## use full path
 	# currentPath = os.getcwd();
