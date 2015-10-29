@@ -7,6 +7,9 @@ import time
 from MyTimer import MyTimer
 from load_graph import load_graph
 from nadjacency import nadjacency
+from moments_cheb import moments_cheb
+from filter_jackson import filter_jackson
+
 
 def demo(dname, Ncheb = 1000, Nbin = 50):
 	

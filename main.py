@@ -1,3 +1,15 @@
+import os
+import numpy as np
+import scipy as sp
+from scipy.sparse import coo_matrix
+import gzip
+import time
+from MyTimer import MyTimer
+from load_graph import load_graph
+from nadjacency import nadjacency
+import math
+
+
 # ## main
 # # ------Check load_graph function
 # from load_graph import *
@@ -19,17 +31,8 @@
 
 # ------Check nadjacency function
 
-import os
-import numpy as np
-import scipy as sp
-from scipy.sparse import coo_matrix
-import gzip
-import time
-from MyTimer import MyTimer
-from load_graph import load_graph
-from nadjacency import nadjacency
-import math
+# dname = 'Erdos02-cc'
+# A, mylambda = load_graph(dname)
+# N = nadjacency(A)
 
-dname = 'Erdos02-cc'
-A, mylambda = load_graph(dname)
-N = nadjacency(A)
+# ------Check Demo function
