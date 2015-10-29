@@ -1,4 +1,8 @@
 from plot_chebint import plot_chebint
+import matplotlib.pyplot as plt
+import math
+import numpy as np
+import scipy as sp
 
 def compare_chebhist(l,c,Nbin=25):
 

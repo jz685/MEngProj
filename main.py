@@ -8,6 +8,7 @@ from MyTimer import MyTimer
 from load_graph import load_graph
 from nadjacency import nadjacency
 import math
+from demo import demo
 
 
 # ## main
@@ -36,3 +37,5 @@ import math
 # N = nadjacency(A)
 
 # ------Check Demo function
+
+demo("pgp-cc")
