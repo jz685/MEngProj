@@ -4,19 +4,18 @@ import math
 import numpy as np
 import scipy as sp
 
-def compare_chebhist(l,c,Nbin=25):
+def compare_chebhist(mylambda, c, Nbin = 25):
+    lmin = max(min(mylambda), -1)
+    lmax = min(max(mylambda),  1)
 
-    lmin = max(min(l),-1)
-    lmax = min(max(l),1)
-
-    x = np.linspace(lmin,lmax,Nbin+1)
-    y = plot_chebint(c,x)
+    x = np.linspace(lmin, lmax, Nbin + 1)
+    y = plot_chebint(c, x)
     u = (x[1:] + x[:-1]) / 2
-    v = (y[1:] - y[:-1])
+    v =  y[1:] - y[:-1]
 
     plt.clf()
     plt.hold(True)
-    plt.hist(l,Nbin)
-    plt.plot(u,v,"r.",markersize=10)
+    plt.hist(mylambda,Nbin)
+    plt.plot(u, v, "r.", markersize=10)
     plt.hold(False)
     plt.show()
