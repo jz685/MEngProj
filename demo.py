@@ -22,7 +22,7 @@ def demo(dname, Ncheb = 1000, Nbin = 50):
 	with MyTimer('hello2'):
 		c = moments_cheb(N, Ncheb, 10)
 
-	compare_chebhist(1 - mylambda, filter_jackson(c), Nbin)
+	compare_chebhist(dname, 1 - mylambda, filter_jackson(c), Nbin)
 
 
 

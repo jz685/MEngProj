@@ -4,7 +4,7 @@ import math
 import numpy as np
 import scipy as sp
 
-def compare_chebhist(mylambda, c, Nbin = 25):
+def compare_chebhist(dname, mylambda, c, Nbin = 25):
     lmin = max(min(mylambda), -1)
     lmax = min(max(mylambda),  1)
 
@@ -18,4 +18,6 @@ def compare_chebhist(mylambda, c, Nbin = 25):
     plt.hist(mylambda,Nbin)
     plt.plot(u, v, "r.", markersize=10)
     plt.hold(False)
-    plt.show()
+    # plt.show()
+    filename = dname + '.png'
+    plt.savefig(filename)
