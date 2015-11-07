@@ -38,4 +38,8 @@ from demo import demo
 
 # ------Check Demo function
 
-demo("pgp-cc")
+filenames = os.listdir('data')
+for filename in filenames:
+	if (filename[0] != '.' and filename.endswith(".smat.gz")):
+		print (filename[:-8])
+		demo(filename[:-8])
