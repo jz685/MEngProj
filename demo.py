@@ -12,7 +12,7 @@ from filter_jackson import filter_jackson
 from compare_chebhist import compare_chebhist
 
 
-def demo(dname, Ncheb = 1000, Nbin = 50):
+def demo(dname, Ncheb = 100, Nbin = 50):
 	
 	with MyTimer('hello'):
 		A, mylambda = load_graph(dname)

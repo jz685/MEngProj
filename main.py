@@ -43,3 +43,6 @@ for filename in filenames:
 	if (filename[0] != '.' and filename.endswith(".smat.gz")):
 		print (filename[:-8])
 		demo(filename[:-8])
+
+# dname = 'marvel-chars-cc'
+# demo(dname)
