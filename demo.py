@@ -11,17 +11,19 @@ from moments_cheb import moments_cheb
 from filter_jackson import filter_jackson
 from compare_chebhist import compare_chebhist
 
-
+## The demo function is a simple function that calles a series of functions and display the result
 def demo(dname, Ncheb = 100, Nbin = 50):
 	
-	with MyTimer('hello'):
+	## Calling loadgraph and set timer 1
+	with MyTimer('Timer One'):
 		A, mylambda = load_graph(dname)
 		N = nadjacency(A)
 
-
-	with MyTimer('hello2'):
+	## Calculate cheb moments and set timer 2
+	with MyTimer('Timer Two'):
 		c = moments_cheb(N, Ncheb, 10)
 
+	## Compare the resuts and display plot, notice filtered cheb moments are passed 
 	compare_chebhist(dname, 1 - mylambda, filter_jackson(c), Nbin)
 
 

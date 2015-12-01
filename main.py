@@ -9,7 +9,9 @@ from load_graph import load_graph
 from nadjacency import nadjacency
 import math
 from demo import demo
-
+from calcEigen import calcEigen
+from readSMAT import readSMAT
+import matplotlib.pyplot as plt
 
 # ## main
 # # ------Check load_graph function
@@ -44,5 +46,38 @@ for filename in filenames:
 		print (filename[:-8])
 		demo(filename[:-8])
 
-# dname = 'marvel-chars-cc'
-# demo(dname)
+# # dname = 'marvel-chars-cc'
+# # demo(dname)
+
+## ------Check eigen function
+# filename = "musm-cc"
+# fullfilename = 'data/' + filename + '.smat.gz'
+# A, n = readSMAT(fullfilename)
+# print n
+# print A
+# B = calcEigen(A, n)
+# normalizedB = B / float(max(B)) + 1
+# print normalizedB
+
+# # print file_content
+# ## write back to new file
+# # C = map(str, B)
+# C = "\n".join(str(element) for element in normalizedB)
+# # print ', '.join(str(x) for x in list_of_ints)
+
+# f = open(fullfilename[:-2] + 'jiaeigs', 'w+')
+# f.write(C)
+# f.close()
+
+# # plt.hist(normalizedB)
+
+## -------Plot 
+
+# filename = "musm-cc"
+# fullfilename = 'data/' + filename + '.smat.gz'
+# mylambda = np.loadtxt(fullfilename[:-2] + 'jiaeigs')
+# print mylambda
+# plt.show()
+
+# # C = normalize(B)
+# # print B

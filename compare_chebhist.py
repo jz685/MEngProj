@@ -20,7 +20,7 @@ def compare_chebhist(dname, mylambda, c, Nbin = 25):
     plt.hist(mylambda,Nbin)
     plt.plot(u, v, "r.", markersize=10)
     plt.hold(False)
-    # plt.show()
+    plt.show()
     filename = 'data/' + dname + '.png'
     plt.savefig(filename)
 

@@ -1,0 +1,21 @@
+ReadMe
+Jia 2015
+
+main: main function, used to test all subfunctions. for now, it will run demo function for each dataset in the data folder.
+demo: nd-to-end demo of histogram estimation
+read_original_data: script that is used to read raw data into SMAT form
+calcEigen: naive function to calculate eigenvalue if .eig file is missing. Only suitable for 'not large' sparse matrixes
+load_graph: interface used between demo and readSMAT/readSMATGZ/calcEigen. Will genertate eigenvalue .eig file if missing.
+myCluster: naive clustering function.
+MyTimer: a simple timer, called when execute functions.
+putinGZ: function that compress raw data into gz file
+readSMAT: a function that 
+moments_cheb: estimate Chebyshev moments for the eigenvalue distribution
+plot_chebint: plot the integral of the density estimate based on first-kind Chebyshev polynomials
+compare_cheb: compare an eigenvalue histogram to the scaled density estimate based on the moments
+compare_chebhist: compare an eigenvalue histogram to an estimated histogram based on integrating the first-kind Chebyshev density approximation
+compare_chebhiste: like compare_chebhist, but uses reduced rank extrapolation to accelerate convergence of histogram bin values
+filter_jackson: apply a Jackson filter to the polynomials
+nadjacency: map adjacency to normalized adjacency
+
+When running main.py, you may need to close the plotted graph in order to let the program to preceed. 

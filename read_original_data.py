@@ -32,14 +32,14 @@ for filename in filenames:
 						# print data
 						maxnum = max(maxnum, int(data))
 					
-		result[0] = str(maxnum) + ' ' + str(maxnum) + ' ' + str(total)
+		result[0] = str(maxnum + 1) + ' ' + str(maxnum + 1) + ' ' + str(total)
 		final = '\n'.join(result)
 
 		# f = open(filename + '.xx', 'w+')
 		# f.write(final)
 		# f.close()
 
-		with gzip.open(filename + '.gz', 'w+') as f:
+		with gzip.open(filename + '.smat.gz', 'w+') as f:
 			f.write(final)
 
 # filename = 'out.brunson_club-membership_club-membership'
