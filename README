@@ -3,6 +3,8 @@ Jia 2015
 
 main: main function, used to test all subfunctions. for now, it will run demo function for each dataset in the data folder.
 demo: nd-to-end demo of histogram estimation
+MomCluster: run the cluster on all datasets in data folder
+clusterByMom: function that takes in all datasets and cluster them based on k-means algorithm
 read_original_data: script that is used to read raw data into SMAT form
 calcEigen: naive function to calculate eigenvalue if .eig file is missing. Only suitable for 'not large' sparse matrixes
 load_graph: interface used between demo and readSMAT/readSMATGZ/calcEigen. Will genertate eigenvalue .eig file if missing.
@@ -18,4 +20,10 @@ compare_chebhiste: like compare_chebhist, but uses reduced rank extrapolation to
 filter_jackson: apply a Jackson filter to the polynomials
 nadjacency: map adjacency to normalized adjacency
 
-When running main.py, you may need to close the plotted graph in order to let the program to preceed. 
+When running main.py or ClusterByMon, you may need to close the plotted graph in order to let the program to preceed and finish. 
+
+Some running samples:
+
+$ python main.py
+
+$ python MomCluster.py 

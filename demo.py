@@ -12,7 +12,7 @@ from filter_jackson import filter_jackson
 from compare_chebhist import compare_chebhist
 
 ## The demo function is a simple function that calles a series of functions and display the result
-def demo(dname, Ncheb = 100, Nbin = 50):
+def demo(dname, Ncheb = 1000, Nbin = 50):
 	
 	## Calling loadgraph and set timer 1
 	with MyTimer('Timer One'):
