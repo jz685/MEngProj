@@ -17,10 +17,10 @@ def readSMAT(filename):
 		# the outcome i, j, v are verctors and m, n are the size
 		m, n, i, j, v = readSMATGZ(filename)
 		## Some Testing Code
-		print i
-		print j
-		print m
-		print n
+		# print i
+		# print j
+		# print m
+		# print n
 		# A = sp.sparse.coo_matrix((v, (i, j)), shape=(m,n))
 		# A = sp.sparse.coo_matrix((v, (i, j)), shape = (m, n)).toarray()
 		A = sp.sparse.coo_matrix((v, (i, j)), shape = (m, n))
@@ -33,7 +33,7 @@ def readSMAT(filename):
 ## The readSMATGZ function takes a .gz filename as input parameter, extract 
 ## from .gz, and read in its content
 def readSMATGZ(filename):
-	print "read from gz"
+	# print "read from gz"
 	with gzip.open(filename, 'rb') as f:
 		file_content = f.read()
 
@@ -44,9 +44,9 @@ def readSMATGZ(filename):
 	f.close()
 
 	## read that file into array
-	print 'reading: ' + filename[:-3]
+	# print 'reading: ' + filename[:-3]
 	tempArray = np.loadtxt(filename[:-3])
-	print tempArray
+	# print tempArray
 
 	## convert array to the required format
 	m = tempArray[0, 0]

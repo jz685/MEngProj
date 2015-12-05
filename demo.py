@@ -24,7 +24,7 @@ def demo(dname, Ncheb = 1000, Nbin = 50):
 		c = moments_cheb(N, Ncheb, 10)
 
 	## Compare the resuts and display plot, notice filtered cheb moments are passed 
-	compare_chebhist(dname, 1 - mylambda, filter_jackson(c), Nbin)
+	compare_chebhist(dname, mylambda, filter_jackson(c), Nbin)
 
 
 

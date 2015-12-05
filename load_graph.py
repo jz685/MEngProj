@@ -43,27 +43,25 @@ def load_graph(graphname):
 	else: 
 		## Use to Rainse Exception
 		# raise Exception('eigs file does not exist.')
+		varargout = 'Do not exist';
+		# ## if enabled, his subrouting can calculate eigen values
+		# ## Only for small matrix only
+		# ## Cannot handle large file
+		# B = calcEigen(A, n)
+		# normalizedB = B / float(max(B)) + 1
+		# C = "\n".join(str(element) for element in normalizedB)
+		# # print ', '.join(str(x) for x in list_of_ints)
+		# f = open(fullfilename, 'w+')
+		# f.write(C)
+		# f.close()
 
-		## NOt quit sure. no MATLAB code of generating eige file provided
-		## Decide to using scipy.linalg.eigh (for sparse matrix) in python  
-		## and eig commend in MatLab, and scale them to 0-2. Both converge 
-		## to the same solution. But this solution is different from the 
-		## eigenvalues given in the .eigs file you shared with me.
-		B = calcEigen(A, n)
-		normalizedB = B / float(max(B)) + 1
-		C = "\n".join(str(element) for element in normalizedB)
-		# print ', '.join(str(x) for x in list_of_ints)
-		f = open(fullfilename, 'w+')
-		f.write(C)
-		f.close()
-
-		## Generate Plot
-		varargout = np.loadtxt(fullfilename)
-		# print varargout
-		plt.clf()
-		plt.hist(varargout, 50)
-		filename = fullfilename[:-5] + '-eigen-dist.png'
-		# plt.show()
-		plt.savefig(filename)
+		# ## Generate Plot
+		# varargout = np.loadtxt(fullfilename)
+		# # print varargout
+		# plt.clf()
+		# plt.hist(varargout, 50)
+		# filename = fullfilename[:-5] + '-eigen-dist.png'
+		# # plt.show()
+		# plt.savefig(filename)
 
 	return (A, varargout)
