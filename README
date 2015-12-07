@@ -1,6 +1,12 @@
 ReadMe
 Jia 2015
 
+## Requirements:
+Python (>= 2.6 or >= 3.3)
+NumPy (>= 1.6.1)
+SciPy (>= 0.9)
+
+## Function Description:
 main: main function, used to test all subfunctions. for now, it will run demo function for each dataset in the data folder.
 demo: nd-to-end demo of histogram estimation
 MomCluster: run the cluster on all datasets in data folder
@@ -20,17 +26,22 @@ compare_chebhiste: like compare_chebhist, but uses reduced rank extrapolation to
 filter_jackson: apply a Jackson filter to the polynomials
 nadjacency: map adjacency to normalized adjacency
 
-## Updates
+## Updated Function Description:
 generateChebForNewData: A function that will automately generate cheb moments for new datas
 generateCheb: A function that will generate cheb moments for a given input matix
+listAllDatasets: A utility function that list all datasets in your 'data' folder
 
+## Important:
+Huge datasets are removed from /data folder to /hugeData folder due to the limited calculation power (too time consuming)
 
+## Notice:
 When running main.py or ClusterByMon, you may need to close the plotted graph in order to let the program to preceed and finish. 
 
-Some running samples:
+## Running samples:
 
 $ python main.py
 
 $ python MomCluster.py 
 
 $ python generateChebForNewData.py
+

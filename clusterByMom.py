@@ -59,5 +59,5 @@ def clusterByMom():
 	for i in range (len(assignment)) :
 		print str(datanames[i]) + "\t\tis assigned to\t\t" + str(assignment[i])
 
-
+	return result
 
