@@ -2,46 +2,69 @@ ReadMe
 Jia 2015
 
 ## Requirements:
-Python (>= 2.6 or >= 3.3)
+Python (>= 2.6 or >= 3.3? Not tested)
 NumPy (>= 1.6.1)
 SciPy (>= 0.9)
 
 ## Function Description:
-main: main function, used to test all subfunctions. for now, it will run demo function for each dataset in the data folder.
-demo: nd-to-end demo of histogram estimation
-MomCluster: run the cluster on all datasets in data folder
-clusterByMom: function that takes in all datasets and cluster them based on k-means algorithm
-read_original_data: script that is used to read raw data into SMAT form
-calcEigen: naive function to calculate eigenvalue if .eig file is missing. Only suitable for 'not large' sparse matrixes
-load_graph: interface used between demo and readSMAT/readSMATGZ/calcEigen. Will genertate eigenvalue .eig file if missing.
-myCluster: naive clustering function.
-MyTimer: a simple timer, called when execute functions.
-putinGZ: function that compress raw data into gz file
-readSMAT: a function that 
-moments_cheb: estimate Chebyshev moments for the eigenvalue distribution
-plot_chebint: plot the integral of the density estimate based on first-kind Chebyshev polynomials
-compare_cheb: compare an eigenvalue histogram to the scaled density estimate based on the moments
-compare_chebhist: compare an eigenvalue histogram to an estimated histogram based on integrating the first-kind Chebyshev density approximation
-compare_chebhiste: like compare_chebhist, but uses reduced rank extrapolation to accelerate convergence of histogram bin values
-filter_jackson: apply a Jackson filter to the polynomials
-nadjacency: map adjacency to normalized adjacency
+1. main: main function, used to test all subfunctions. for now, it will run demo function for each dataset in the data folder.
+2. demo: nd-to-end demo of histogram estimation
+3. MomCluster: run the cluster on datasets in data folder, have two options for total clustering and supervised learning
+4. clusterByMom: function that takes in all datasets and cluster them based on k-means algorithm
+5. read_original_data: script that is used to read raw data into SMAT form
+6. calcEigen: naive function to calculate eigenvalue if .eig file is missing. Only suitable for 'not large' sparse matrixes
+7. load_graph: interface used between demo and readSMAT/readSMATGZ/calcEigen. Will genertate eigenvalue .eig file if missing.
+8. myCluster: naive clustering function.
+9. MyTimer: a simple timer, called when execute functions.
+10.putinGZ: function that compress raw data into gz file
+11.readSMAT: a function that 
+12.moments_cheb: estimate Chebyshev moments for the eigenvalue distribution
+13.plot_chebint: plot the integral of the density estimate based on first-kind Chebyshev polynomials
+14.compare_cheb: compare an eigenvalue histogram to the scaled density estimate based on the moments
+15.compare_chebhist: compare an eigenvalue histogram to an estimated histogram based on integrating the first-kind Chebyshev density approximation
+16.compare_chebhiste: like compare_chebhist, but uses reduced rank extrapolation to accelerate convergence of histogram bin values
+17.filter_jackson: apply a Jackson filter to the polynomials
+18.nadjacency: map adjacency to normalized adjacency
 
 ## Updated Function Description:
-generateChebForNewData: A function that will automately generate cheb moments for new datas
-generateCheb: A function that will generate cheb moments for a given input matix
-listAllDatasets: A utility function that list all datasets in your 'data' folder
+19.generateChebForNewData: A function that will automately generate cheb moments for new datas
+20.generateCheb: A function that will generate cheb moments for a given input matix
+21.listAllDatasets: A utility function that list all datasets in your 'data' folder
+22.superLearning: Function that cluster required datasets
+23.superTesting: Function that tell the belong of a dataset by finding the min dist between given data and given centrids
 
 ## Important:
-Huge datasets are removed from /data folder to /hugeData folder due to the limited calculation power (too time consuming)
+Huge datasets are removed from /data folder to /hugeData folder due to the limited calculation power (too time consuming even for cheb moments)
 
 ## Notice:
-When running main.py or ClusterByMon, you may need to close the plotted graph in order to let the program to preceed and finish. 
+1. When running main.py or ClusterByMon, you may need to close the plotted graph in order to let the program to preceed and finish. 
+2. Clustering function cannot automatically takein number of clusters and randomly generate initials since the data given is not positive defitinate and random choosing cluster center function in SciPy does not work with this condition. Now the initials of each cluster is fixed. May be fixed in next version.
 
-## Running samples:
-
+## Some Running samples:
+1.
+enter:
 $ python main.py
 
-$ python MomCluster.py 
-
+2.
+enter:
 $ python generateChebForNewData.py
 
+3.
+enter:
+$ python MomCluster.py 
+
+then enter:
+CAD
+
+4.
+enter:
+$ python MomCluster.py 
+
+then enter: 
+SL
+
+then enter: 
+Affiliation.brunson_south-africa_south-africa, Affiliation.brunson_revolution_revolution, Affiliation.brunson_corporate-leadership_corporate-leadership, Affiliation.brunson_club-membership_club-membership, Animal.moreno_bison_bison, Animal.moreno_cattle_cattle, Animal.moreno_hens_hens, Animal.moreno_kangaroo_kangaroo
+
+then enter: 
+Affiliation.brunson_south-africa_south-africa, Animal.moreno_kangaroo_kangaroo, Animal.moreno_sheep_sheep

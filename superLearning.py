@@ -5,7 +5,7 @@ from scipy.cluster.vq import vq, kmeans, whiten, kmeans2
 import matplotlib.pyplot as plt
 import os
 
-def clusterByMom():
+def superLearning(training):
 
 	datanames = []
 	datasets = []
@@ -14,18 +14,22 @@ def clusterByMom():
 	for filename in filenames:
 		if (filename[0] != '.' and filename.endswith(".cheb")):
 			# print ('Now Reading:' + filename[:-5])
-			datanames.append(filename[:-5])
-			dataarray = []
-			f = open('data/' + filename, 'r')
+			rawname = filename[:-5]
+			## Check if training
+			if rawname in training:
+				# print ('Now Reading:' + rawname)
+				datanames.append(filename[:-5])
+				dataarray = []
+				f = open('data/' + filename, 'r')
 
-			for content in f.readlines():
-  				# print content
-				item = content[1:-2]
-				# print item
-				dataarray.append(float(item))
-				content = f.readline()
-			f.close()
-			datasets.append(dataarray)
+				for content in f.readlines():
+	  				# print content
+					item = content[1:-2]
+					# print item
+					dataarray.append(float(item))
+					content = f.readline()
+				f.close()
+				datasets.append(dataarray)
 
 	# print datasets
 
@@ -48,16 +52,19 @@ def clusterByMom():
 	# result, assignment = kmeans2(datasets, 4);
 	# print assignment
 
+	## *****!!!!!_____Change Number of Clusters Here______!!!!!******
 	# ## Run with manual initialization
-	book = array ((whiten_data[0], whiten_data[8], whiten_data[4]));
+	book = array ((whiten_data[0], whiten_data[5]));
 	result, assignment = kmeans2(whiten_data, book);
 	# print assignment
 	# book = array ((test_data[5], test_data[15], test_data[25], test_data[35]));
 	# result, assignment = kmeans2(test_data, book);
 	# print assignment
 
-	for i in range (len(assignment)) :
-		print str(datanames[i]) + "\t\tis assigned to\t\t" + str(assignment[i])
+
+
+	## Enable these lines if you wants to see the assignments of training data
+	# for i in range (len(assignment)) :
+	# 	print str(datanames[i]) + "\t\tis assigned to\t\t" + str(assignment[i])
 
 	return result
-
